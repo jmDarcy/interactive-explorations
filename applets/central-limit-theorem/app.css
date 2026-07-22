@@ -1,0 +1,10 @@
+/* Style specyficzne dla apletu Central Limit Theorem. */
+
+.applet-explainer .katex-display {
+  margin: 0.75rem 0;
+  overflow-x: auto;
+}
+
+#chart {
+  border-radius: var(--radius);
+}

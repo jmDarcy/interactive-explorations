@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Explorations — Jakub Mikołajczak</title>
+  <meta name="description" content="Interaktywne demonstracje z probabilistyki, statystyki, uczenia maszynowego i matematyki aktuarialnej." />
+  <link rel="stylesheet" href="shared/theme.css" />
+  <link rel="stylesheet" href="shared/layout.css" />
+</head>
+<body>
+  <header class="jm-header">
+    <a class="brand" href="https://jakubmikolajczak.pl">Jakub Mikołajczak</a>
+    <nav>
+      <a href="https://jakubmikolajczak.pl/Notatki/">Notatki</a>
+      <a href="https://github.com/jmDarcy/interactive-explorations">Kod źródłowy</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="gallery-hero">
+      <p class="kicker">Interactive Explorations</p>
+      <h1>Hands-on mathematical and quantitative applets</h1>
+      <p>
+        Zbiór samodzielnych, interaktywnych demonstracji z zakresu probabilistyki, statystyki,
+        uczenia maszynowego i matematyki aktuarialnej. Notatki na
+        <a href="https://jakubmikolajczak.pl">jakubmikolajczak.pl</a> pozostają warstwą teoretyczną —
+        tutaj zmieniasz parametry, obserwujesz wykresy i sprawdzasz intuicje na własną rękę.
+      </p>
+    </section>
+
+    <section class="domain-section" style="--domain-color:#38ff9c">
+      <h2>Probability &amp; Stochastic Processes</h2>
+      <div class="tile-grid">
+        <article class="applet-tile" aria-disabled="true">
+          <span class="domain-tag">wkrótce</span>
+          <h3>Markov Chain Convergence Explorer</h3>
+          <p>Zbieżność łańcucha Markowa do rozkładu stacjonarnego przy edytowalnej macierzy przejścia.</p>
+        </article>
+        <article class="applet-tile" aria-disabled="true">
+          <span class="domain-tag">wkrótce</span>
+          <h3>Poisson Process Timeline</h3>
+          <p>Symulacja czasów zdarzeń procesu Poissona i wpływ intensywności na odstępy między nimi.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="domain-section" style="--domain-color:#a3b0fb">
+      <h2>Statistics &amp; Econometrics</h2>
+      <div class="tile-grid">
+        <a class="applet-tile" href="applets/central-limit-theorem/">
+          <span class="domain-tag">Statistics</span>
+          <h3>Central Limit Theorem</h3>
+          <p>Jak rozkład średniej z próby zbliża się do rozkładu normalnego wraz ze wzrostem liczności próby.</p>
+          <div class="tile-links"><span>Otwórz aplet →</span></div>
+        </a>
+        <article class="applet-tile" aria-disabled="true">
+          <span class="domain-tag">wkrótce</span>
+          <h3>Bootstrap Confidence Intervals</h3>
+          <p>Konstrukcja przedziałów ufności metodą bootstrap bez założeń o rozkładzie populacji.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="domain-section" style="--domain-color:#ffd166">
+      <h2>Machine Learning</h2>
+      <div class="tile-grid">
+        <article class="applet-tile" aria-disabled="true">
+          <span class="domain-tag">wkrótce</span>
+          <h3>Decision Boundary Lab</h3>
+          <p>Jak zmiana wag i wybór modelu obraca oraz odkształca granicę decyzyjną klasyfikatora.</p>
+        </article>
+        <article class="applet-tile" aria-disabled="true">
+          <span class="domain-tag">wkrótce</span>
+          <h3>Gradient Descent Surface</h3>
+          <p>Ścieżka gradientu prostego na powierzchni funkcji straty w zależności od kroku uczenia.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="domain-section" style="--domain-color:#f59e0b">
+      <h2>Actuarial Science &amp; Finance</h2>
+      <div class="tile-grid">
+        <article class="applet-tile" aria-disabled="true">
+          <span class="domain-tag">wkrótce</span>
+          <h3>Loss Distribution Explorer</h3>
+          <p>Wpływ rozkładu częstości i dotkliwości szkód na kształt rozkładu szkody zagregowanej.</p>
+        </article>
+        <article class="applet-tile" aria-disabled="true">
+          <span class="domain-tag">wkrótce</span>
+          <h3>Life Table &amp; Survival Curve</h3>
+          <p>Eksploracja tablicy trwania życia, funkcji przeżycia i intensywności śmiertelności.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="jm-footer">
+    <p>
+      <a href="https://jakubmikolajczak.pl">jakubmikolajczak.pl</a> ·
+      <a href="https://github.com/jmDarcy/interactive-explorations">kod źródłowy na GitHub</a>
+    </p>
+    <p>© 2026 Jakub Mikołajczak</p>
+  </footer>
+</body>
+</html>

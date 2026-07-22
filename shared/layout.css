@@ -1,0 +1,187 @@
+/* =========================================================
+   INTERACTIVE EXPLORATIONS — SHARED LAYOUT
+   Układ galerii, kafelków oraz strony pojedynczego apletu.
+   ========================================================= */
+
+.page-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Galeria */
+
+.gallery-hero {
+  max-width: 780px;
+  margin: 0 0 2.5rem;
+}
+
+.gallery-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.9rem;
+}
+
+.gallery-hero p {
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.domain-section {
+  margin-bottom: 2.5rem;
+}
+
+.domain-section h2 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  padding-left: 0.7rem;
+  border-left: 3px solid var(--domain-color, var(--accent));
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.applet-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.applet-tile:hover {
+  transform: translateY(-4px);
+  border-color: var(--domain-color, var(--secondary));
+  text-decoration: none;
+}
+
+.applet-tile .domain-tag {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--domain-color, var(--accent));
+}
+
+.applet-tile h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.applet-tile p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.applet-tile .tile-links {
+  margin-top: auto;
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+/* Pojedynczy aplet */
+
+.applet-header {
+  margin-bottom: 1.5rem;
+}
+
+.applet-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.applet-header p.goal {
+  color: var(--text-muted);
+  max-width: 70ch;
+  line-height: 1.6;
+}
+
+.applet-explainer {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  line-height: 1.7;
+}
+
+.applet-viz {
+  margin: 1.5rem 0;
+  min-height: 320px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1rem;
+}
+
+.applet-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.result-stat {
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  min-width: 140px;
+}
+
+.result-stat .label {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.result-stat .value {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.applet-interpretation {
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 1.5rem 0;
+}
+
+.applet-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.back-to-gallery {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .control-panel {
+    flex-direction: column;
+  }
+}
