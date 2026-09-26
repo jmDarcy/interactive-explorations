@@ -1,0 +1,149 @@
+{
+  "domains": {
+    "logic": {
+      "order": 1,
+      "label": "Logic & Foundations",
+      "shortLabel": "Logic",
+      "color": "#b8c46e",
+      "description": "Logika, teoria mnogości i dowody formalne — od tabel prawdy po Lean 4."
+    },
+    "topology": {
+      "order": 2,
+      "label": "Topology & Geometry",
+      "shortLabel": "Topology",
+      "color": "#6fc2c8",
+      "description": "Przestrzenie, ciągłość i niezmienniki: powierzchnie, homotopie, węzły."
+    },
+    "analysis": {
+      "order": 3,
+      "label": "Analysis",
+      "shortLabel": "Analysis",
+      "color": "#d97a6c",
+      "description": "Szeregi Fouriera, miara i zbiory fraktalne — przybliżenia, które widać."
+    },
+    "probability": {
+      "order": 4,
+      "label": "Probability & Stochastic Processes",
+      "shortLabel": "Probability",
+      "color": "#7cc4a0",
+      "description": "Losowość w czasie: łańcuchy Markowa, procesy Poissona, zbieżność."
+    },
+    "statistics": {
+      "order": 5,
+      "label": "Statistics & Econometrics",
+      "shortLabel": "Statistics",
+      "color": "#98a6e8",
+      "description": "Wnioskowanie z danych: rozkłady z próby, przedziały ufności, estymacja."
+    },
+    "ml": {
+      "order": 6,
+      "label": "Machine Learning",
+      "shortLabel": "Machine Learning",
+      "color": "#c39be0",
+      "description": "Modele uczące się z danych: granice decyzyjne, optymalizacja, interpretowalność."
+    },
+    "game-theory": {
+      "order": 7,
+      "label": "Game Theory & Decision Theory",
+      "shortLabel": "Game Theory",
+      "color": "#e48fb0",
+      "description": "Równowagi, strategie i decyzje w warunkach niepewności."
+    },
+    "economics": {
+      "order": 8,
+      "label": "Mathematical Economics",
+      "shortLabel": "Economics",
+      "color": "#a8b0bf",
+      "description": "Modele rynków i makroekonomii: równowaga, bilanse sektorowe, dynamika."
+    },
+    "actuarial": {
+      "order": 9,
+      "label": "Actuarial Science & Financial Mathematics",
+      "shortLabel": "Actuarial",
+      "color": "#e0976a",
+      "description": "Ryzyko ubezpieczeniowe: rozkłady szkód, tablice trwania życia, rezerwy."
+    }
+  },
+  "applets": [
+    {
+      "id": "central-limit-theorem",
+      "domain": "statistics",
+      "title": "Central Limit Theorem",
+      "description": "Jak rozkład średniej z próby zbliża się do rozkładu normalnego wraz ze wzrostem liczności próby.",
+      "status": "live",
+      "addedAt": "2026-07-22",
+      "tags": ["CLT", "centralne twierdzenie graniczne", "średnia z próby", "rozkład normalny", "zbieżność według rozkładu"],
+      "notesUrl": null
+    },
+    {
+      "id": "markov-chain-convergence",
+      "domain": "probability",
+      "title": "Markov Chain Convergence Explorer",
+      "description": "Zbieżność łańcucha Markowa do rozkładu stacjonarnego przy edytowalnej macierzy przejścia.",
+      "status": "soon",
+      "addedAt": null,
+      "tags": ["łańcuch Markowa", "Markow", "rozkład stacjonarny", "macierz przejścia"],
+      "notesUrl": null
+    },
+    {
+      "id": "poisson-process-timeline",
+      "domain": "probability",
+      "title": "Poisson Process Timeline",
+      "description": "Symulacja czasów zdarzeń procesu Poissona i wpływ intensywności na odstępy między nimi.",
+      "status": "soon",
+      "addedAt": null,
+      "tags": ["proces Poissona", "intensywność", "rozkład wykładniczy"],
+      "notesUrl": null
+    },
+    {
+      "id": "bootstrap-confidence-intervals",
+      "domain": "statistics",
+      "title": "Bootstrap Confidence Intervals",
+      "description": "Konstrukcja przedziałów ufności metodą bootstrap bez założeń o rozkładzie populacji.",
+      "status": "soon",
+      "addedAt": null,
+      "tags": ["bootstrap", "przedział ufności", "resampling"],
+      "notesUrl": null
+    },
+    {
+      "id": "decision-boundary-lab",
+      "domain": "ml",
+      "title": "Decision Boundary Lab",
+      "description": "Jak zmiana wag i wybór modelu obraca oraz odkształca granicę decyzyjną klasyfikatora.",
+      "status": "soon",
+      "addedAt": null,
+      "tags": ["klasyfikacja", "granica decyzyjna", "regresja logistyczna"],
+      "notesUrl": null
+    },
+    {
+      "id": "gradient-descent-surface",
+      "domain": "ml",
+      "title": "Gradient Descent Surface",
+      "description": "Ścieżka gradientu prostego na powierzchni funkcji straty w zależności od kroku uczenia.",
+      "status": "soon",
+      "addedAt": null,
+      "tags": ["gradient prosty", "optymalizacja", "funkcja straty", "krok uczenia"],
+      "notesUrl": null
+    },
+    {
+      "id": "loss-distribution-explorer",
+      "domain": "actuarial",
+      "title": "Loss Distribution Explorer",
+      "description": "Wpływ rozkładu częstości i dotkliwości szkód na kształt rozkładu szkody zagregowanej.",
+      "status": "soon",
+      "addedAt": null,
+      "tags": ["szkoda zagregowana", "częstość", "dotkliwość", "model kolektywny"],
+      "notesUrl": null
+    },
+    {
+      "id": "life-table-survival-curve",
+      "domain": "actuarial",
+      "title": "Life Table & Survival Curve",
+      "description": "Eksploracja tablicy trwania życia, funkcji przeżycia i intensywności śmiertelności.",
+      "status": "soon",
+      "addedAt": null,
+      "tags": ["tablica trwania życia", "przeżycie", "funkcja przeżycia", "intensywność śmiertelności"],
+      "notesUrl": null
+    }
+  ]
+}

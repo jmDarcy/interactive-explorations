@@ -1,9 +1,12 @@
 # design/
 
-Materiały projektowe dla redesignu „Interactive Explorations”.
+Materiały projektowe dla redesignu „Interactive Explorations”. Katalog jest dokumentacją —
+strona do niego nie linkuje.
 
-- `reference/*.dc.html`: mockupy (tylko specyfikacja wizualna, nie kod produkcyjny).
-- `assets/sigils/`, `assets/covers/`: znaki i okładki 9 dziedzin.
-- `assets/thumbs/`: miniatury apletów z rejestru.
+- `reference/*.dc.html`: mockupy (tylko specyfikacja wizualna, nie kod produkcyjny;
+  `{{gold}}` oznacza `#cfae6a`).
 
-Instrukcja wdrożenia: `PROMPT_CLAUDE_CODE.md` w katalogu głównym repo.
+Zasoby graficzne z tego katalogu zostały przeniesione do miejsc produkcyjnych:
+
+- znaki i okładki 9 dziedzin → `assets/domains/<id>/sigil.svg` i `cover.svg`,
+- miniatury apletów → `applets/<id>/thumb.svg`.
