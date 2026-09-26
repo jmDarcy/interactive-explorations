@@ -1,1 +1,2 @@
-/* Style specyficzne dla tego apletu — nadpisania nad ../../shared/theme.css i layout.css. */
+/* Style specyficzne dla tego apletu — nadpisania nad ../../shared/theme.css i layout.css.
+   Używaj wyłącznie tokenów z theme.css (np. var(--domain), var(--gold)). */
