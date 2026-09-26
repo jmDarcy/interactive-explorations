@@ -1,5 +1,9 @@
-import { clamp, formatNumber, bindRangeInput, mulberry32 } from "../../shared/utilities.js";
+import { clamp, formatNumber, bindRangeInput, mulberry32, plotlyTheme } from "../../shared/utilities.js";
 import { renderMath } from "../../shared/math-formatting.js";
+import { initAppletPage } from "../../shared/applet-page.js";
+
+// TODO: id apletu z applets/registry.json
+const page = initAppletPage("TODO-nazwa-apletu");
 
 const resultsEl = document.querySelector("#results");
 const interpretationEl = document.querySelector("#interpretation");
@@ -8,26 +12,26 @@ const chartEl = document.querySelector("#chart");
 function run() {
   // TODO: odczytaj kontrolki, policz wynik symulacji/modelu.
 
-  Plotly.newPlot(
+  const theme = plotlyTheme(page?.domain.color);
+  Plotly.react(
     chartEl,
     [
-      // TODO: trace'y Plotly (np. { x, y, type: "scatter" })
+      // TODO: trace'y Plotly, np.
+      // { type: "histogram", x: samples, ...theme.histogram },
+      // { type: "scatter", mode: "lines", x, y, ...theme.curve },
     ],
-    {
-      paper_bgcolor: "transparent",
-      plot_bgcolor: "transparent",
-      font: { color: "#e6edf3" },
-      margin: { t: 20, r: 20, b: 40, l: 50 },
-      xaxis: { gridcolor: "#30363d" },
-      yaxis: { gridcolor: "#30363d" },
-    },
-    { responsive: true, displayModeBar: false }
+    { ...theme.layout },
+    theme.config
   );
 
   resultsEl.innerHTML = `
+    <div class="result-stat theoretical">
+      <span class="label">TODO: wartość teoretyczna</span>
+      <span class="value">TODO</span>
+    </div>
     <div class="result-stat">
-      <div class="label">TODO: etykieta</div>
-      <div class="value">TODO</div>
+      <span class="label">TODO: wartość empiryczna</span>
+      <span class="value">TODO</span>
     </div>
   `;
 

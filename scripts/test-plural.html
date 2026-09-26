@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test odmiany — Interactive Explorations</title>
+  <style>
+    body { margin: 0; padding: 24px; background: #14120e; color: #ece3cf; font: 16px/1.5 ui-monospace, monospace; }
+    .ok { color: #7cc4a0; }
+    .fail { color: #e48fb0; }
+  </style>
+</head>
+<body>
+  <h1>plural() i normalizeText()</h1>
+  <pre id="out">…</pre>
+  <script type="module">
+    import { plural, normalizeText, matchesQuery } from "../shared/utilities.js";
+
+    const aplet = (n) => `${n} ${plural(n, "aplet", "aplety", "apletów")}`;
+    const dostepny = (n) => `${n} ${plural(n, "dostępny", "dostępne", "dostępnych")}`;
+    const dziedzina = (n) => `${n} ${plural(n, "dziedzina", "dziedziny", "dziedzin")}`;
+
+    const cases = [
+      [aplet(0), "0 apletów"], [aplet(1), "1 aplet"], [aplet(2), "2 aplety"], [aplet(4), "4 aplety"],
+      [aplet(5), "5 apletów"], [aplet(11), "11 apletów"], [aplet(12), "12 apletów"], [aplet(14), "14 apletów"],
+      [aplet(21), "21 apletów"], [aplet(22), "22 aplety"], [aplet(104), "104 aplety"], [aplet(112), "112 apletów"],
+      [dostepny(1), "1 dostępny"], [dostepny(2), "2 dostępne"], [dostepny(5), "5 dostępnych"],
+      [dziedzina(1), "1 dziedzina"], [dziedzina(3), "3 dziedziny"], [dziedzina(9), "9 dziedzin"],
+      [normalizeText("Łódź"), "lodz"], [normalizeText("PRZEŻYCIE"), "przezycie"],
+      [String(matchesQuery("lodz", ["Łódź"])), "true"], [String(matchesQuery("markow stacj", ["Markowa", "stacjonarny"])), "true"],
+      [String(matchesQuery("xyz", ["Markow"])), "false"],
+    ];
+
+    let failed = 0;
+    const lines = cases.map(([got, want]) => {
+      const pass = got === want;
+      if (!pass) failed += 1;
+      console.assert(pass, `oczekiwano „${want}”, jest „${got}”`);
+      return `<span class="${pass ? "ok" : "fail"}">${pass ? "✓" : "✗"} ${got}${pass ? "" : ` (oczekiwano: ${want})`}</span>`;
+    });
+    lines.push("", failed ? `<span class="fail">Błędy: ${failed}</span>` : `<span class="ok">Wszystkie ${cases.length} przypadki OK</span>`);
+    document.querySelector("#out").innerHTML = lines.join("\n");
+    document.title = failed ? `✗ ${failed} — test odmiany` : "✓ test odmiany";
+  </script>
+</body>
+</html>

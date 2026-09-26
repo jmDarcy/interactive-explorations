@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>Interactive Explorations — strona główna</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#14120e;font-family:'Alegreya Sans',Georgia,serif;color:#ece3cf}
+a{color:#e2c98f;text-decoration:none}a:hover{color:#f3e2b8}
+</style>
+</helmet>
+<div style="width: 1440px; height: 2160px; box-sizing: border-box; background: #14120e; color: #ece3cf; font-family: 'Alegreya Sans', Georgia, serif; display: flex; flex-direction: column">
+
+<header style="height: 76px; box-sizing: border-box; padding: 0 120px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #2e2920">
+<a href="https://jakubmikolajczak.pl" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; font-weight: 600; color: #ece3cf">Jakub Mikołajczak</a>
+<nav style="display: flex; gap: 32px; font-size: 16px">
+<a href="https://jakubmikolajczak.pl/Notatki/" style="color: #c9bfa8">Notatki</a>
+<a href="https://github.com/jmDarcy/interactive-explorations" style="color: #c9bfa8">Kod źródłowy</a>
+</nav>
+</header>
+
+<section style="padding: 72px 120px 56px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 32px; align-items: end">
+<div style="grid-column: span 8; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: {{gold}}">Interactive Explorations</p>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 76px; line-height: 0.98; letter-spacing: -0.01em; color: #f1e8d4">Hands-on mathematical <span style="font-style: italic; color: {{gold}}">&amp;</span> quantitative applets</h1>
+<p style="margin: 0; max-width: 680px; font-size: 19px; line-height: 1.6; color: #c9bfa8">Zbiór samodzielnych, interaktywnych demonstracji z zakresu probabilistyki, statystyki, uczenia maszynowego i matematyki aktuarialnej. Notatki na <a href="https://jakubmikolajczak.pl">jakubmikolajczak.pl</a> pozostają warstwą teoretyczną — tutaj zmieniasz parametry, obserwujesz wykresy i sprawdzasz intuicje na własną rękę.</p>
+</div>
+<div style="grid-column: span 4; display: flex; flex-direction: column; gap: 10px">
+<label for="q" style="font-size: 15px; color: #c9bfa8">Szukaj we wszystkich dziedzinach</label>
+<div style="min-height: 52px; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 12px; background: #1b1812; border: 1px solid #4a4234; border-radius: 10px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9d927b" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20 L16 16"></path></svg>
+<input id="q" type="search" placeholder="np. bootstrap, Markow, przeżycie…" style="flex-grow: 1; min-width: 0; background: transparent; border: none; outline: none; font-family: 'Alegreya Sans', Georgia, serif; font-size: 17px; color: #ece3cf">
+</div>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9d927b">8 apletów · 9 dziedzin · 1 dostępny</span>
+</div>
+</section>
+
+<div style="padding: 0 120px; display: flex; align-items: center; gap: 16px">
+<span style="flex-grow: 1; height: 1px; background: #3a3326"></span>
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="{{gold}}" stroke-width="1.2"><path d="M9 1 L17 9 L9 17 L1 9 Z"></path><path d="M9 5 L13 9 L9 13 L5 9 Z"></path></svg>
+<span style="flex-grow: 1; height: 1px; background: #3a3326"></span>
+</div>
+
+<section style="padding: 56px 120px 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px">
+
+<!-- Logic & Foundations -->
+<a href="#" style="display: block; height: 352px; box-sizing: border-box; padding: 8px; background: #1b1812; border: 1px solid #332d22; border-radius: 16px; color: #ece3cf">
+<div style="height: 100%; box-sizing: border-box; padding: 22px 24px; border: 1px solid #b8c46e55; border-radius: 10px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<svg width="40" height="40" viewBox="0 0 36 36" fill="none" stroke="#b8c46e" stroke-width="1.4" stroke-linecap="round"><path d="M11 7 V29 M11 18 H27"></path><circle cx="27" cy="18" r="2" fill="#b8c46e"></circle></svg>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9d927b">w przygotowaniu</span>
+</div>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 31px; font-weight: 600; line-height: 1.05; color: #f1e8d4">Logic &amp; Foundations</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #c9bfa8">Logika, teoria mnogości i dowody formalne — od tabel prawdy po Lean 4.</p>
+<div style="margin-top: auto; display: flex; align-items: flex-end; gap: 16px">
+<div style="width: 176px; height: 92px; background: #15130f; border: 1px solid #2a251c; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="168" height="84" viewBox="0 0 220 110" fill="none" stroke="#b8c46e" stroke-width="1.2"><path d="M110 98 L60 72 M110 98 L110 72 M110 98 L160 72 M60 72 L60 40 M60 72 L110 40 M110 72 L60 40 M110 72 L160 40 M160 72 L110 40 M160 72 L160 40 M60 40 L110 14 M110 40 L110 14 M160 40 L110 14"></path><g fill="#15130f"><circle cx="110" cy="98" r="4.5"></circle><circle cx="60" cy="72" r="4.5"></circle><circle cx="110" cy="72" r="4.5"></circle><circle cx="160" cy="72" r="4.5"></circle><circle cx="60" cy="40" r="4.5"></circle><circle cx="110" cy="40" r="4.5"></circle><circle cx="160" cy="40" r="4.5"></circle></g><circle cx="110" cy="14" r="4.5" fill="#e2c98f" stroke="#e2c98f"></circle></svg></div>
+<span style="margin-left: auto; min-height: 44px; display: flex; align-items: center; font-size: 16px; font-weight: 500; color: #b8c46e">Przeglądaj →</span>
+</div>
+</div>
+</a>
+
+<!-- Topology & Geometry -->
+<a href="#" style="display: block; height: 352px; box-sizing: border-box; padding: 8px; background: #1b1812; border: 1px solid #332d22; border-radius: 16px; color: #ece3cf">
+<div style="height: 100%; box-sizing: border-box; padding: 22px 24px; border: 1px solid #6fc2c855; border-radius: 10px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<svg width="40" height="40" viewBox="0 0 36 36" fill="none" stroke="#6fc2c8" stroke-width="1.4"><ellipse cx="18" cy="18" rx="15" ry="9"></ellipse><path d="M11 17 Q18 22 25 17"></path><path d="M13 19 Q18 15 23 19"></path></svg>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9d927b">w przygotowaniu</span>
+</div>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 31px; font-weight: 600; line-height: 1.05; color: #f1e8d4">Topology &amp; Geometry</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #c9bfa8">Przestrzenie, ciągłość i niezmienniki: powierzchnie, homotopie, węzły.</p>
+<div style="margin-top: auto; display: flex; align-items: flex-end; gap: 16px">
+<div style="width: 176px; height: 92px; background: #15130f; border: 1px solid #2a251c; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="168" height="84" viewBox="0 0 220 110" fill="none" stroke="#6fc2c8" stroke-width="1.4"><ellipse cx="110" cy="56" rx="92" ry="42"></ellipse><path d="M66 54 Q110 80 154 54"></path><path d="M76 62 Q110 44 144 62"></path><ellipse cx="110" cy="56" rx="64" ry="26" stroke="#e2c98f" stroke-dasharray="3 3"></ellipse><path d="M34 56 C34 40 52 40 52 56 C52 72 34 72 34 56" stroke="#6fc2c8" stroke-width="1" stroke-dasharray="2 2"></path></svg></div>
+<span style="margin-left: auto; min-height: 44px; display: flex; align-items: center; font-size: 16px; font-weight: 500; color: #6fc2c8">Przeglądaj →</span>
+</div>
+</div>
+</a>
+
+<!-- Analysis & Fractals -->
+<a href="#" style="display: block; height: 352px; box-sizing: border-box; padding: 8px; background: #1b1812; border: 1px solid #332d22; border-radius: 16px; color: #ece3cf">
+<div style="height: 100%; box-sizing: border-box; padding: 22px 24px; border: 1px solid #d97a6c55; border-radius: 10px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<svg width="40" height="40" viewBox="0 0 36 36" fill="none" stroke="#d97a6c" stroke-width="1.4"><path d="M3 18 H33" stroke-width="0.8"></path><path d="M3 18 C7 6 11 6 14 18 S21 30 25 18 S31 8 33 12"></path></svg>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9d927b">w przygotowaniu</span>
+</div>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 31px; font-weight: 600; line-height: 1.05; color: #f1e8d4">Analysis</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #c9bfa8">Szeregi Fouriera, miara i zbiory fraktalne — przybliżenia, które widać.</p>
+<div style="margin-top: auto; display: flex; align-items: flex-end; gap: 16px">
+<div style="width: 176px; height: 92px; background: #15130f; border: 1px solid #2a251c; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="168" height="84" viewBox="0 0 220 110" fill="none"><path d="M14 58 H206" stroke="#4a4234"></path><path d="M18 58 V28 H64 V88 H110 V28 H156 V88 H202 V58" stroke="#e2c98f" stroke-dasharray="3 3"></path><path d="M18.0,58.0 L19.5,42.6 L21.1,30.5 L22.6,23.8 L24.1,22.6 L25.7,25.1 L27.2,28.6 L28.7,30.9 L30.3,31.0 L31.8,29.1 L33.3,26.8 L34.9,25.5 L36.4,25.9 L37.9,27.7 L39.5,29.6 L41.0,30.4 L42.5,29.6 L44.1,27.7 L45.6,25.9 L47.1,25.5 L48.7,26.8 L50.2,29.1 L51.7,31.0 L53.3,30.9 L54.8,28.6 L56.3,25.1 L57.9,22.6 L59.4,23.8 L60.9,30.5 L62.5,42.6 L64.0,58.0 L65.5,73.4 L67.1,85.5 L68.6,92.2 L70.1,93.4 L71.7,90.9 L73.2,87.4 L74.7,85.1 L76.3,85.0 L77.8,86.9 L79.3,89.2 L80.9,90.5 L82.4,90.1 L83.9,88.3 L85.5,86.4 L87.0,85.6 L88.5,86.4 L90.1,88.3 L91.6,90.1 L93.1,90.5 L94.7,89.2 L96.2,86.9 L97.7,85.0 L99.3,85.1 L100.8,87.4 L102.3,90.9 L103.9,93.4 L105.4,92.2 L106.9,85.5 L108.5,73.4 L110.0,58.0 L111.5,42.6 L113.1,30.5 L114.6,23.8 L116.1,22.6 L117.7,25.1 L119.2,28.6 L120.7,30.9 L122.3,31.0 L123.8,29.1 L125.3,26.8 L126.9,25.5 L128.4,25.9 L129.9,27.7 L131.5,29.6 L133.0,30.4 L134.5,29.6 L136.1,27.7 L137.6,25.9 L139.1,25.5 L140.7,26.8 L142.2,29.1 L143.7,31.0 L145.3,30.9 L146.8,28.6 L148.3,25.1 L149.9,22.6 L151.4,23.8 L152.9,30.5 L154.5,42.6 L156.0,58.0 L157.5,73.4 L159.1,85.5 L160.6,92.2 L162.1,93.4 L163.7,90.9 L165.2,87.4 L166.7,85.1 L168.3,85.0 L169.8,86.9 L171.3,89.2 L172.9,90.5 L174.4,90.1 L175.9,88.3 L177.5,86.4 L179.0,85.6 L180.5,86.4 L182.1,88.3 L183.6,90.1 L185.1,90.5 L186.7,89.2 L188.2,86.9 L189.7,85.0 L191.3,85.1 L192.8,87.4 L194.3,90.9 L195.9,93.4 L197.4,92.2 L198.9,85.5 L200.5,73.4 L202.0,58.0" stroke="#d97a6c" stroke-width="1.6"></path></svg></div>
+<span style="margin-left: auto; min-height: 44px; display: flex; align-items: center; font-size: 16px; font-weight: 500; color: #d97a6c">Przeglądaj →</span>
+</div>
+</div>
+</a>
+
+<!-- Probability -->
+<a href="#" style="display: block; height: 352px; box-sizing: border-box; padding: 8px; background: #1b1812; border: 1px solid #332d22; border-radius: 16px; color: #ece3cf">
+<div style="height: 100%; box-sizing: border-box; padding: 22px 24px; border: 1px solid #7cc4a055; border-radius: 10px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<svg width="40" height="40" viewBox="0 0 36 36" fill="none" stroke="#7cc4a0" stroke-width="1.3"><rect x="7" y="7" width="22" height="22" rx="4" transform="rotate(45 18 18)"></rect><circle cx="18" cy="11" r="1.6" fill="#7cc4a0"></circle><circle cx="18" cy="18" r="1.6" fill="#7cc4a0"></circle><circle cx="18" cy="25" r="1.6" fill="#7cc4a0"></circle></svg>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9d927b">2 aplety · wkrótce</span>
+</div>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 31px; font-weight: 600; line-height: 1.05; color: #f1e8d4">Probability &amp; Stochastic Processes</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #c9bfa8">Losowość w czasie: łańcuchy Markowa, procesy Poissona, zbieżność.</p>
+<div style="margin-top: auto; display: flex; align-items: flex-end; gap: 16px">
+<div style="width: 176px; height: 92px; background: #15130f; border: 1px solid #2a251c; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="168" height="84" viewBox="0 0 220 110" fill="none" stroke="#7cc4a0" stroke-width="1.4"><circle cx="58" cy="36" r="13"></circle><circle cx="162" cy="36" r="13"></circle><circle cx="110" cy="88" r="13"></circle><path d="M72 30 Q110 14 148 30"></path><path d="M148 44 Q110 58 72 44"></path><path d="M66 48 L99 78"></path><path d="M154 48 L121 78"></path><path d="M45 28 C22 12 22 50 45 44"></path><path d="M143 27 L149 30 L143 34"></path><path d="M78 39 L72 44 L79 48"></path></svg></div>
+<span style="margin-left: auto; min-height: 44px; display: flex; align-items: center; font-size: 16px; font-weight: 500; color: #7cc4a0">Przeglądaj →</span>
+</div>
+</div>
+</a>
+
+<!-- Statistics -->
+<a href="Statistics.dc.html" style="display: block; height: 352px; box-sizing: border-box; padding: 8px; background: #1f1b15; border: 1px solid {{gold}}; border-radius: 16px; color: #ece3cf">
+<div style="height: 100%; box-sizing: border-box; padding: 22px 24px; border: 1px solid #98a6e866; border-radius: 10px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<svg width="40" height="40" viewBox="0 0 36 36" fill="none" stroke="#98a6e8" stroke-width="1.3"><path d="M3 29 H33"></path><path d="M4 28 C11 28 12 8 18 8 C24 8 25 28 32 28"></path><path d="M18 8 V29" stroke-dasharray="2 2"></path></svg>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9d927b">2 aplety · <span style="color: #98a6e8">1 dostępny</span></span>
+</div>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 31px; font-weight: 600; line-height: 1.05; color: #f1e8d4">Statistics &amp; Econometrics</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #c9bfa8">Wnioskowanie z danych: rozkłady z próby, przedziały ufności, estymacja.</p>
+<div style="margin-top: auto; display: flex; align-items: flex-end; gap: 16px">
+<div style="width: 176px; height: 92px; background: #15130f; border: 1px solid #3a3326; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="168" height="84" viewBox="0 0 220 110" fill="none"><path d="M10 94 H210" stroke="#4a4234"></path><g fill="#98a6e84d" stroke="#98a6e8" stroke-width="0.8"><rect x="23.0" y="88.1" width="11.5" height="3.9"></rect><rect x="36.5" y="82.0" width="11.5" height="10.0"></rect><rect x="50.1" y="74.1" width="11.5" height="17.9"></rect><rect x="63.6" y="56.4" width="11.5" height="35.6"></rect><rect x="77.2" y="40.3" width="11.5" height="51.7"></rect><rect x="90.7" y="31.9" width="11.5" height="60.1"></rect><rect x="104.2" y="16.7" width="11.5" height="75.3"></rect><rect x="117.8" y="29.4" width="11.5" height="62.6"></rect><rect x="131.3" y="42.9" width="11.5" height="49.1"></rect><rect x="144.8" y="55.3" width="11.5" height="36.7"></rect><rect x="158.4" y="73.9" width="11.5" height="18.1"></rect><rect x="171.9" y="82.4" width="11.5" height="9.6"></rect><rect x="185.5" y="87.9" width="11.5" height="4.1"></rect></g><path d="M8.5,91.2 L15.2,90.6 L22.0,89.6 L28.8,88.1 L35.5,85.8 L42.3,82.5 L49.1,78.1 L55.8,72.5 L62.6,65.7 L69.4,57.9 L76.2,49.5 L82.9,41.2 L89.7,33.5 L96.5,27.4 L103.2,23.4 L110.0,22.0 L116.8,23.4 L123.5,27.4 L130.3,33.5 L137.1,41.2 L143.8,49.5 L150.6,57.9 L157.4,65.7 L164.2,72.5 L170.9,78.1 L177.7,82.5 L184.5,85.8 L191.2,88.1 L198.0,89.6 L204.8,90.6 L211.5,91.2" stroke="#cfae6a" stroke-width="1.6"></path></svg></div>
+<span style="margin-left: auto; min-height: 44px; display: flex; align-items: center; font-size: 16px; font-weight: 500; color: #98a6e8">Przeglądaj →</span>
+</div>
+</div>
+</a>
+
+<!-- ML -->
+<a href="#" style="display: block; height: 352px; box-sizing: border-box; padding: 8px; background: #1b1812; border: 1px solid #332d22; border-radius: 16px; color: #ece3cf">
+<div style="height: 100%; box-sizing: border-box; padding: 22px 24px; border: 1px solid #c39be055; border-radius: 10px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<svg width="40" height="40" viewBox="0 0 36 36" fill="none" stroke="#c39be0" stroke-width="1.3"><circle cx="8" cy="10" r="3.5"></circle><circle cx="8" cy="26" r="3.5"></circle><circle cx="28" cy="18" r="3.5"></circle><path d="M11.3 11.4 L24.7 16.6 M11.3 24.6 L24.7 19.4 M8 13.5 V22.5"></path></svg>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9d927b">2 aplety · wkrótce</span>
+</div>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 31px; font-weight: 600; line-height: 1.05; color: #f1e8d4">Machine Learning</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #c9bfa8">Modele uczące się z danych: granice decyzyjne, optymalizacja, interpretowalność.</p>
+<div style="margin-top: auto; display: flex; align-items: flex-end; gap: 16px">
+<div style="width: 176px; height: 92px; background: #15130f; border: 1px solid #2a251c; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="168" height="84" viewBox="0 0 220 110" fill="none" stroke="#c39be0" stroke-width="1.1"><ellipse cx="132" cy="58" rx="84" ry="44"></ellipse><ellipse cx="132" cy="58" rx="60" ry="31"></ellipse><ellipse cx="132" cy="58" rx="37" ry="19"></ellipse><ellipse cx="132" cy="58" rx="15" ry="8"></ellipse><path d="M34 22 L72 86 L94 32 L112 76 L122 46 L128 64 L132 58" stroke="#e2c98f" stroke-width="1.6"></path><circle cx="34" cy="22" r="2.6" fill="#e2c98f" stroke="none"></circle><circle cx="132" cy="58" r="2.6" fill="#e2c98f" stroke="none"></circle></svg></div>
+<span style="margin-left: auto; min-height: 44px; display: flex; align-items: center; font-size: 16px; font-weight: 500; color: #c39be0">Przeglądaj →</span>
+</div>
+</div>
+</a>
+
+<!-- Game Theory -->
+<a href="#" style="display: block; height: 352px; box-sizing: border-box; padding: 8px; background: #1b1812; border: 1px solid #332d22; border-radius: 16px; color: #ece3cf">
+<div style="height: 100%; box-sizing: border-box; padding: 22px 24px; border: 1px solid #e48fb055; border-radius: 10px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<svg width="40" height="40" viewBox="0 0 36 36" fill="none" stroke="#e48fb0" stroke-width="1.3"><rect x="6" y="6" width="24" height="24" rx="2"></rect><path d="M18 6 V30 M6 18 H30"></path><circle cx="24" cy="24" r="2.4" fill="#e48fb0"></circle></svg>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9d927b">w przygotowaniu</span>
+</div>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 31px; font-weight: 600; line-height: 1.05; color: #f1e8d4">Game Theory &amp; Decision Theory</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #c9bfa8">Równowagi, strategie i decyzje w warunkach niepewności.</p>
+<div style="margin-top: auto; display: flex; align-items: flex-end; gap: 16px">
+<div style="width: 176px; height: 92px; background: #15130f; border: 1px solid #2a251c; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="168" height="84" viewBox="0 0 220 110" fill="none"><rect x="112" y="56" width="68" height="40" fill="#e48fb033"></rect><path d="M44 16 H180 V96 H44 Z M112 16 V96 M44 56 H180" stroke="#e48fb0" stroke-width="1.2"></path><g fill="#d9cfb8" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle"><text x="78" y="41">3, 3</text><text x="146" y="41">0, 5</text><text x="78" y="81">5, 0</text></g><text x="146" y="81" fill="#e2c98f" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">1, 1</text></svg></div>
+<span style="margin-left: auto; min-height: 44px; display: flex; align-items: center; font-size: 16px; font-weight: 500; color: #e48fb0">Przeglądaj →</span>
+</div>
+</div>
+</a>
+
+<!-- Mathematical Economics -->
+<a href="#" style="display: block; height: 352px; box-sizing: border-box; padding: 8px; background: #1b1812; border: 1px solid #332d22; border-radius: 16px; color: #ece3cf">
+<div style="height: 100%; box-sizing: border-box; padding: 22px 24px; border: 1px solid #a8b0bf55; border-radius: 10px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<svg width="40" height="40" viewBox="0 0 36 36" fill="none" stroke="#a8b0bf" stroke-width="1.3"><path d="M5 4 V31 H32" stroke-width="0.9"></path><path d="M8 8 C14 16 22 22 30 27"></path><path d="M8 27 C14 20 22 13 30 7"></path></svg>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9d927b">w przygotowaniu</span>
+</div>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 31px; font-weight: 600; line-height: 1.05; color: #f1e8d4">Mathematical Economics</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #c9bfa8">Modele rynków i makroekonomii: równowaga, bilanse sektorowe, dynamika.</p>
+<div style="margin-top: auto; display: flex; align-items: flex-end; gap: 16px">
+<div style="width: 176px; height: 92px; background: #15130f; border: 1px solid #2a251c; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="168" height="84" viewBox="0 0 220 110" fill="none"><path d="M24 8 V98 H210" stroke="#4a4234"></path><path d="M34 18 C80 36 140 66 200 88" stroke="#a8b0bf" stroke-width="1.6"></path><path d="M34 90 C90 76 150 48 200 16" stroke="#a8b0bf" stroke-width="1.6" stroke-dasharray="5 3"></path><path d="M24 54 H116 V98" stroke="#e2c98f" stroke-dasharray="2 3"></path><circle cx="116" cy="54" r="3.4" fill="#e2c98f"></circle></svg></div>
+<span style="margin-left: auto; min-height: 44px; display: flex; align-items: center; font-size: 16px; font-weight: 500; color: #a8b0bf">Przeglądaj →</span>
+</div>
+</div>
+</a>
+
+<!-- Actuarial -->
+<a href="#" style="display: block; height: 352px; box-sizing: border-box; padding: 8px; background: #1b1812; border: 1px solid #332d22; border-radius: 16px; color: #ece3cf">
+<div style="height: 100%; box-sizing: border-box; padding: 22px 24px; border: 1px solid #e0976a55; border-radius: 10px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<svg width="40" height="40" viewBox="0 0 36 36" fill="none" stroke="#e0976a" stroke-width="1.3"><path d="M9 4 H27 M9 32 H27"></path><path d="M11 4 C11 13 25 13 25 18 C25 23 11 23 11 32 M25 4 C25 13 11 13 11 18 C11 23 25 23 25 32"></path><path d="M14 29 H22" stroke-width="2"></path></svg>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9d927b">2 aplety · wkrótce</span>
+</div>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 31px; font-weight: 600; line-height: 1.05; color: #f1e8d4">Actuarial Science &amp; Financial Mathematics</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #c9bfa8">Ryzyko ubezpieczeniowe: rozkłady szkód, tablice trwania życia, rezerwy.</p>
+<div style="margin-top: auto; display: flex; align-items: flex-end; gap: 16px">
+<div style="width: 176px; height: 92px; background: #15130f; border: 1px solid #2a251c; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="168" height="84" viewBox="0 0 220 110" fill="none"><path d="M12 94 H208" stroke="#4a4234"></path><path d="M128.4,94 L128.4,81.0 L135.3,82.9 L142.2,84.5 L149.1,85.9 L156.0,87.0 L162.9,88.0 L169.8,88.8 L176.7,89.5 L183.6,90.1 L190.5,90.6 L197.4,91.0 L202.0,91.3 L202,94 Z" fill="#e0976a55"></path><path d="M18.0,94.0 L22.6,91.4 L27.2,77.5 L31.8,59.1 L36.4,44.0 L41.0,34.5 L45.6,30.1 L50.2,29.4 L54.8,31.1 L59.4,34.4 L64.0,38.5 L68.6,43.0 L73.2,47.5 L77.8,51.8 L82.4,55.9 L87.0,59.7 L91.6,63.2 L96.2,66.3 L100.8,69.2 L105.4,71.7 L110.0,74.0 L114.6,76.1 L119.2,77.9 L123.8,79.6 L128.4,81.0 L133.0,82.3 L139.9,84.0 L146.8,85.4 L153.7,86.6 L160.6,87.7 L169.8,88.8 L179.0,89.7 L190.5,90.6 L202.0,91.3" stroke="#e0976a" stroke-width="1.6"></path><path d="M128.4 94 V70" stroke="#e2c98f" stroke-dasharray="2 2"></path></svg></div>
+<span style="margin-left: auto; min-height: 44px; display: flex; align-items: center; font-size: 16px; font-weight: 500; color: #e0976a">Przeglądaj →</span>
+</div>
+</div>
+</a>
+</section>
+
+<section style="padding: 64px 120px 0; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 30px; font-weight: 600; color: #ece3cf">Ostatnio dodane</h2>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9d927b">ze wszystkich dziedzin</span>
+</div>
+<a href="Applet.dc.html" style="box-sizing: border-box; padding: 14px 20px 14px 14px; display: flex; align-items: center; gap: 24px; background: #1b1812; border: 1px solid #3a3326; border-radius: 12px; color: #ece3cf">
+<div style="width: 132px; height: 66px; background: #15130f; border: 1px solid #2a251c; border-radius: 6px; display: flex; align-items: center; justify-content: center"><svg width="124" height="62" viewBox="0 0 220 110" fill="none"><path d="M10 94 H210" stroke="#4a4234"></path><g fill="#98a6e84d" stroke="#98a6e8" stroke-width="0.8"><rect x="50.1" y="74.1" width="11.5" height="17.9"></rect><rect x="63.6" y="56.4" width="11.5" height="35.6"></rect><rect x="77.2" y="40.3" width="11.5" height="51.7"></rect><rect x="90.7" y="31.9" width="11.5" height="60.1"></rect><rect x="104.2" y="16.7" width="11.5" height="75.3"></rect><rect x="117.8" y="29.4" width="11.5" height="62.6"></rect><rect x="131.3" y="42.9" width="11.5" height="49.1"></rect><rect x="144.8" y="55.3" width="11.5" height="36.7"></rect><rect x="158.4" y="73.9" width="11.5" height="18.1"></rect></g><path d="M22.0,89.6 L42.3,82.5 L62.6,65.7 L82.9,41.2 L96.5,27.4 L110.0,22.0 L123.5,27.4 L137.1,41.2 L157.4,65.7 L177.7,82.5 L198.0,89.6" stroke="#cfae6a" stroke-width="1.8"></path></svg></div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #98a6e8">Statistics &amp; Econometrics</span>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; font-weight: 600; color: #f1e8d4">Central Limit Theorem</span>
+</div>
+<span style="font-size: 16px; color: {{gold}}">Otwórz aplet →</span>
+</a>
+</section>
+
+<footer style="margin-top: auto; padding: 40px 120px 48px; border-top: 1px solid #2e2920; display: flex; justify-content: space-between; align-items: center; font-size: 15px; color: #9d927b">
+<span><a href="https://jakubmikolajczak.pl" style="color: #c9bfa8">jakubmikolajczak.pl</a> · <a href="https://github.com/jmDarcy/interactive-explorations" style="color: #c9bfa8">kod źródłowy na GitHub</a></span>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 17px">© 2026 Jakub Mikołajczak</span>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"gold":{"editor":"color","default":"#cfae6a","options":["#cfae6a","#d9b88a","#b9c4a0"]},"$preview":{"width":1440,"height":2160}}'>
+class Component extends DCLogic {
+renderVals() {
+return { gold: this.props.gold ?? '#cfae6a' };
+}
+}
+</script>
+</body>
+</html>

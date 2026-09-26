@@ -1,5 +1,9 @@
-import { mulberry32, formatNumber } from "../../shared/utilities.js";
+import { mulberry32, formatNumber, plotlyTheme } from "../../shared/utilities.js";
 import { renderMath } from "../../shared/math-formatting.js";
+import { initAppletPage } from "../../shared/applet-page.js";
+
+const page = initAppletPage("central-limit-theorem");
+const domainColor = page?.domain.color;
 
 const DISTRIBUTIONS = {
   uniform: {
@@ -29,11 +33,13 @@ const mInput = document.querySelector("#m");
 const mValue = document.querySelector("#m-value");
 const standardizeInput = document.querySelector("#standardize");
 const resampleButton = document.querySelector("#resample");
+const resetButton = document.querySelector("#reset");
 const resultsEl = document.querySelector("#results");
 const interpretationEl = document.querySelector("#interpretation");
 const chartEl = document.querySelector("#chart");
 
-let seed = 42;
+const DEFAULT_SEED = 42;
+let seed = DEFAULT_SEED;
 
 function normalPdf(x, mean, variance) {
   const sd = Math.sqrt(variance);
@@ -64,25 +70,25 @@ function summarize(values) {
 
 function renderResults({ theoreticalMean, theoreticalSd, empirical }) {
   resultsEl.innerHTML = `
-    <div class="result-stat">
-      <div class="label">Teoretyczna średnia μ</div>
-      <div class="value">${formatNumber(theoreticalMean)}</div>
+    <div class="result-stat theoretical">
+      <span class="label">μ (teoretyczna)</span>
+      <span class="value">${formatNumber(theoreticalMean)}</span>
+    </div>
+    <div class="result-stat theoretical">
+      <span class="label">σ / √n</span>
+      <span class="value">${formatNumber(theoreticalSd, 4)}</span>
     </div>
     <div class="result-stat">
-      <div class="label">Teoretyczne σ/√n</div>
-      <div class="value">${formatNumber(theoreticalSd)}</div>
+      <span class="label">średnia z M średnich</span>
+      <span class="value">${formatNumber(empirical.mean)}</span>
     </div>
     <div class="result-stat">
-      <div class="label">Empiryczna średnia</div>
-      <div class="value">${formatNumber(empirical.mean)}</div>
+      <span class="label">odch. std. średnich</span>
+      <span class="value">${formatNumber(empirical.sd, 4)}</span>
     </div>
-    <div class="result-stat">
-      <div class="label">Empiryczne odch. std.</div>
-      <div class="value">${formatNumber(empirical.sd)}</div>
-    </div>
-    <div class="result-stat">
-      <div class="label">Skośność empiryczna</div>
-      <div class="value">${formatNumber(empirical.skewness)}</div>
+    <div class="result-stat wide">
+      <span class="label">skośność empiryczna średnich</span>
+      <span class="value">${formatNumber(empirical.skewness)}</span>
     </div>
   `;
 }
@@ -138,7 +144,8 @@ function run() {
   const curveX = Array.from({ length: 200 }, (_, i) => xMin + ((xMax - xMin) * i) / 199);
   const curveY = curveX.map((x) => normalPdf(x, plotMean, plotVariance));
 
-  Plotly.newPlot(
+  const theme = plotlyTheme(domainColor);
+  Plotly.react(
     chartEl,
     [
       {
@@ -146,8 +153,8 @@ function run() {
         type: "histogram",
         histnorm: "probability density",
         name: "Średnie z próby",
-        marker: { color: "rgba(163, 176, 251, 0.55)" },
         nbinsx: 60,
+        ...theme.histogram,
       },
       {
         x: curveX,
@@ -155,19 +162,27 @@ function run() {
         type: "scatter",
         mode: "lines",
         name: "Teoretyczny rozkład graniczny",
-        line: { color: "#38ff9c", width: 2 },
+        ...theme.curve,
       },
     ],
     {
-      paper_bgcolor: "transparent",
-      plot_bgcolor: "transparent",
-      font: { color: "#e6edf3" },
-      margin: { t: 20, r: 20, b: 40, l: 50 },
-      xaxis: { title: standardize ? "z" : "średnia z próby", gridcolor: "#30363d" },
-      yaxis: { title: "gęstość", gridcolor: "#30363d" },
-      legend: { orientation: "h", y: -0.2 },
+      ...theme.layout,
+      xaxis: { ...theme.layout.xaxis, title: { ...theme.layout.xaxis.title, text: standardize ? "z" : "średnia z próby" } },
+      yaxis: { ...theme.layout.yaxis, title: { ...theme.layout.yaxis.title, text: "gęstość" } },
+      shapes: [
+        {
+          type: "line",
+          xref: "x",
+          yref: "paper",
+          x0: plotMean,
+          x1: plotMean,
+          y0: 0,
+          y1: 1,
+          line: { color: theme.curve.line.color, width: 1, dash: "dot" },
+        },
+      ],
     },
-    { responsive: true, displayModeBar: false }
+    theme.config
   );
 
   const empirical = summarize(rawMeans);
@@ -177,6 +192,15 @@ function run() {
 
 resampleButton.addEventListener("click", () => {
   seed += 1;
+  run();
+});
+
+resetButton.addEventListener("click", () => {
+  distributionSelect.selectedIndex = 0;
+  nInput.value = nInput.defaultValue;
+  mInput.value = mInput.defaultValue;
+  standardizeInput.checked = standardizeInput.defaultChecked;
+  seed = DEFAULT_SEED;
   run();
 });
 

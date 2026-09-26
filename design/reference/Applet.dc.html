@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>Central Limit Theorem — strona apletu</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#14120e;font-family:'Alegreya Sans',Georgia,serif;color:#ece3cf}
+a{color:#e2c98f;text-decoration:none}a:hover{color:#f3e2b8}
+input[type=range]{accent-color:#cfae6a}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1640px; box-sizing: border-box; background: #14120e; color: #ece3cf; font-family: 'Alegreya Sans', Georgia, serif; display: flex; flex-direction: column">
+
+<header style="height: 76px; box-sizing: border-box; padding: 0 120px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #2e2920">
+<a href="Main.dc.html" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; font-weight: 600; color: #ece3cf">Interactive Explorations</a>
+<nav style="display: flex; gap: 32px; font-size: 16px"><a href="https://jakubmikolajczak.pl" style="color: #c9bfa8">jakubmikolajczak.pl</a></nav>
+</header>
+
+<main style="padding: 40px 120px 64px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 15px; color: #9d927b"><a href="Main.dc.html" style="color: #c9bfa8">Interactive Explorations</a><span>/</span><a href="Statistics.dc.html" style="color: #c9bfa8">Statistics &amp; Econometrics</a><span>/</span><span style="color: #ece3cf">Central Limit Theorem</span></div>
+
+<section style="display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; padding-bottom: 32px; border-bottom: 1px solid #3a3326">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 820px">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #98a6e8">Statistics &amp; Econometrics</p>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 68px; line-height: 1; color: #f1e8d4">Central Limit Theorem</h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #c9bfa8">Jedno pytanie: jak liczność próby <i style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px">n</i> wpływa na to, jak bardzo rozkład średniej z próby przypomina rozkład normalny — niezależnie od kształtu rozkładu, z którego pochodzą pojedyncze obserwacje?</p>
+</div>
+<svg width="72" height="72" viewBox="0 0 36 36" fill="none" stroke="#98a6e8" stroke-width="1"><circle cx="18" cy="18" r="17" stroke="#cfae6a"></circle><path d="M6 25 H30"></path><path d="M7 24 C12 24 13 10 18 10 C23 10 24 24 29 24"></path></svg>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; align-items: start">
+
+<div style="grid-column: span 4; display: flex; flex-direction: column; gap: 24px">
+<div style="box-sizing: border-box; padding: 24px; background: #1b1812; border: 1px solid #3a3326; border-radius: 14px; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 600; color: #ece3cf">Panel instrumentu</h2><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #9d927b">3 pokrętła</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="dist" style="font-size: 15px; color: #c9bfa8">Rozkład populacji</label>
+<select id="dist" style="min-height: 44px; padding: 0 12px; font-family: 'Alegreya Sans', Georgia, serif; font-size: 16px; color: #ece3cf; background: #14120e; border: 1px solid #4a4234; border-radius: 8px"><option>Jednostajny na (0, 1)</option><option>Wykładniczy (λ = 1)</option><option>Bernoulliego (p = 0.1)</option></select>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between"><label for="n" style="font-size: 15px; color: #c9bfa8">Liczność próby <i style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px">n</i></label><span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #cfae6a">30</span></div>
+<input id="n" type="range" min="1" max="200" value="30" style="width: 100%">
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between"><label for="m" style="font-size: 15px; color: #c9bfa8">Liczba prób <i style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px">M</i></label><span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #cfae6a">2000</span></div>
+<input id="m" type="range" min="100" max="10000" value="2000" style="width: 100%">
+</div>
+<div style="display: flex; gap: 12px">
+<button type="button" style="flex-grow: 1; min-height: 46px; font-family: 'Alegreya Sans', Georgia, serif; font-size: 16px; font-weight: 700; color: #14120e; background: #cfae6a; border: 1px solid #cfae6a; border-radius: 8px; cursor: pointer">Losuj ponownie</button>
+<button type="button" style="min-height: 46px; padding: 0 16px; font-family: 'Alegreya Sans', Georgia, serif; font-size: 16px; color: #ece3cf; background: transparent; border: 1px solid #4a4234; border-radius: 8px; cursor: pointer">Reset</button>
+</div>
+</div>
+
+<div style="box-sizing: border-box; padding: 20px 24px; background: #1b1812; border: 1px solid #3a3326; border-radius: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; color: #9d927b">μ (teoretyczna)</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 22px; color: #98a6e8">0.500</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; color: #9d927b">σ / √n</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 22px; color: #98a6e8">0.0527</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; color: #9d927b">średnia z M średnich</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 22px; color: #ece3cf">[wynik]</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; color: #9d927b">odch. std. średnich</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 22px; color: #ece3cf">[wynik]</span></div>
+</div>
+
+<aside style="position: relative; box-sizing: border-box; padding: 8px; background: #1b1812; border: 1px solid #332d22; border-radius: 14px">
+<div style="box-sizing: border-box; padding: 20px; border: 1px solid #cfae6a44; border-radius: 9px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #cfae6a">Z marginesu</span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; font-weight: 600; line-height: 1.15; color: #f1e8d4">Od de Moivre’a do Pólyi</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #c9bfa8">W 1733 roku Abraham de Moivre przybliżył rozkład dwumianowy krzywą dzwonową. Laplace uogólnił ten wynik na początku XIX wieku, a nazwę „centralne twierdzenie graniczne” nadał mu George Pólya w 1920 roku.</p>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; font-size: 15px">Powiązane notatki: [link do notatki] →</a>
+</div>
+</aside>
+</div>
+
+<div style="grid-column: span 8; display: flex; flex-direction: column; gap: 24px">
+<figure style="margin: 0; box-sizing: border-box; padding: 24px; background: #1b1812; border: 1px solid #3a3326; border-radius: 14px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<figcaption style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; font-weight: 600; color: #ece3cf">Rozkład średnich z <i>M</i> prób</figcaption>
+<div style="display: flex; gap: 20px; font-size: 14px; color: #c9bfa8">
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 14px; height: 10px; background: #98a6e84d; border: 1px solid #98a6e8"></span>histogram średnich</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 18px; height: 2px; background: #cfae6a"></span>granica normalna</span>
+</div>
+</div>
+<svg width="741" height="337" viewBox="0 0 880 400" fill="none">
+<g stroke="#2a251c" stroke-width="1"><path d="M60 110 H820 M60 190 H820 M60 270 H820"></path></g>
+<path d="M60 350 H820" stroke="#4a4234" stroke-width="1.2"></path>
+<g fill="#98a6e840" stroke="#98a6e8" stroke-width="0.8"><rect x="61.5" y="349.4" width="18.1" height="0.6"></rect><rect x="82.6" y="348.8" width="18.1" height="1.2"></rect><rect x="103.7" y="347.6" width="18.1" height="2.4"></rect><rect x="124.8" y="346.0" width="18.1" height="4.0"></rect><rect x="145.9" y="342.4" width="18.1" height="7.6"></rect><rect x="167.1" y="337.6" width="18.1" height="12.4"></rect><rect x="188.2" y="331.0" width="18.1" height="19.0"></rect><rect x="209.3" y="318.0" width="18.1" height="32.0"></rect><rect x="230.4" y="306.3" width="18.1" height="43.7"></rect><rect x="251.5" y="282.5" width="18.1" height="67.5"></rect><rect x="272.6" y="263.1" width="18.1" height="86.9"></rect><rect x="293.7" y="234.6" width="18.1" height="115.4"></rect><rect x="314.8" y="193.8" width="18.1" height="156.2"></rect><rect x="335.9" y="145.2" width="18.1" height="204.8"></rect><rect x="357.1" y="138.4" width="18.1" height="211.6"></rect><rect x="378.2" y="106.8" width="18.1" height="243.2"></rect><rect x="399.3" y="66.4" width="18.1" height="283.6"></rect><rect x="420.4" y="38.2" width="18.1" height="311.8"></rect><rect x="441.5" y="57.4" width="18.1" height="292.6"></rect><rect x="462.6" y="77.9" width="18.1" height="272.1"></rect><rect x="483.7" y="72.1" width="18.1" height="277.9"></rect><rect x="504.8" y="141.5" width="18.1" height="208.5"></rect><rect x="525.9" y="144.1" width="18.1" height="205.9"></rect><rect x="547.1" y="197.6" width="18.1" height="152.4"></rect><rect x="568.2" y="233.4" width="18.1" height="116.6"></rect><rect x="589.3" y="262.3" width="18.1" height="87.7"></rect><rect x="610.4" y="284.0" width="18.1" height="66.0"></rect><rect x="631.5" y="299.6" width="18.1" height="50.4"></rect><rect x="652.6" y="319.9" width="18.1" height="30.1"></rect><rect x="673.7" y="329.1" width="18.1" height="20.9"></rect><rect x="694.8" y="336.9" width="18.1" height="13.1"></rect><rect x="715.9" y="342.6" width="18.1" height="7.4"></rect><rect x="737.1" y="345.6" width="18.1" height="4.4"></rect><rect x="758.2" y="347.8" width="18.1" height="2.2"></rect><rect x="779.3" y="348.8" width="18.1" height="1.2"></rect><rect x="800.4" y="349.4" width="18.1" height="0.6"></rect></g>
+<path d="M38.9,349.8 L65.6,349.5 L92.4,348.7 L119.1,347.1 L145.9,344.0 L159.2,341.6 L172.6,338.3 L186.0,334.0 L199.3,328.4 L212.7,321.5 L226.1,312.8 L239.4,302.3 L252.8,289.8 L266.2,275.3 L279.6,258.7 L292.9,240.1 L306.3,220.0 L319.7,198.6 L333.0,176.5 L346.4,154.3 L359.8,132.7 L373.1,112.7 L386.5,94.9 L399.9,80.2 L413.3,69.2 L426.6,62.3 L440.0,60.0 L453.4,62.3 L466.7,69.2 L480.1,80.2 L493.5,94.9 L506.9,112.7 L520.2,132.7 L533.6,154.3 L547.0,176.5 L560.3,198.6 L573.7,220.0 L587.1,240.1 L600.4,258.7 L613.8,275.3 L627.2,289.8 L640.6,302.3 L653.9,312.8 L667.3,321.5 L680.7,328.4 L694.0,334.0 L707.4,338.3 L720.8,341.6 L734.1,344.0 L747.5,345.8 L774.3,348.1 L801.0,349.2 L841.1,349.8" stroke="#cfae6a" stroke-width="2.2"></path>
+<path d="M440 40 V350" stroke="#cfae6a" stroke-dasharray="3 4" stroke-width="1"></path>
+<g fill="#9d927b" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle"><text x="239.6" y="376">0.40</text><text x="339.8" y="376">0.45</text><text x="440" y="376">0.50</text><text x="540.2" y="376">0.55</text><text x="640.4" y="376">0.60</text></g>
+<g stroke="#4a4234"><path d="M239.6 350 V356 M339.8 350 V356 M440 350 V356 M540.2 350 V356 M640.4 350 V356"></path></g>
+<text x="452" y="52" fill="#cfae6a" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="22">μ</text>
+</svg>
+</figure>
+
+<section style="box-sizing: border-box; padding: 32px 36px; background: #1b1812; border: 1px solid #3a3326; border-radius: 14px; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 600; color: #ece3cf">Co tu się dzieje</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #c9bfa8">Niech <i style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">X₁, X₂, …, Xₙ</i> będą niezależnymi zmiennymi losowymi o tym samym rozkładzie, ze średnią <i style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">μ</i> i wariancją <i style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">σ²</i>. Centralne twierdzenie graniczne mówi, że dla dużych <i style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">n</i>:</p>
+<div style="padding: 20px 0; border-top: 1px solid #2e2920; border-bottom: 1px solid #2e2920; display: flex; align-items: center; justify-content: center; gap: 18px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 32px; color: #f1e8d4">
+<span style="display: flex; flex-direction: column; align-items: center; line-height: 1.15"><span>X̄ₙ − μ</span><span style="padding-top: 4px; border-top: 1px solid #f1e8d4">σ / √n</span></span>
+<span style="color: #cfae6a">→<sup style="font-size: 18px">d</sup></span>
+<span>𝒩(0, 1)</span>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #c9bfa8">Aplet losuje <i style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">M</i> niezależnych prób o liczności <i style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px">n</i> z wybranego rozkładu, oblicza średnią z każdej próby i pokazuje histogram tych średnich na tle teoretycznego rozkładu granicznego.</p>
+</section>
+</div>
+
+</section>
+</main>
+
+<footer style="margin-top: auto; padding: 40px 120px 48px; border-top: 1px solid #2e2920; display: flex; justify-content: space-between; align-items: center; font-size: 15px; color: #9d927b">
+<a href="Statistics.dc.html" style="color: #c9bfa8">← Statistics &amp; Econometrics</a>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 17px">© 2026 Jakub Mikołajczak</span>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1640}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

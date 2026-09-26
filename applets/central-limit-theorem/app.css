@@ -1,10 +1,6 @@
-/* Style specyficzne dla apletu Central Limit Theorem. */
+/* Style specyficzne dla apletu Central Limit Theorem.
+   Wspólny wygląd strony apletu jest w ../../shared/layout.css. */
 
-.applet-explainer .katex-display {
-  margin: 0.75rem 0;
-  overflow-x: auto;
-}
-
-#chart {
-  border-radius: var(--radius);
+.control-field.checkbox label .katex {
+  font-size: 1.05em;
 }
